@@ -11,32 +11,106 @@
 
 		-->
 	<script src="https://cdn.tailwindcss.com"></script>
-	<title>Document</title>
+	<title>WPL - World Putting League</title>
 </head>
+<style>
+	.menu {
+		display: none;
+	}
+
+	.menu.open {
+		display: block;
+	}
+
+	.close-btn {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		width: 2rem;
+		height: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 1.5rem;
+		color: white;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+
+	.close-btn:hover {
+		color: yellow;
+	}
+</style>
 
 <body>
 	<header
-		class="flex flex-col justify-between items-center bg-[url(./img/header__img.webp)] h-screen bg-center bg-cover bg-no-repeat py-5">
-		<nav class="flex flex-col w-full justify-center items-center md:flex-row md:justify-between md:px-5">
-			<picture class="header__nav-logo ">
-				<source type="image/webp" srcSet="img/logo.webp" />
-				<img src="img/logo.png" alt="WPL logo" width="160" height="55" />
-			</picture>
-			<div class="text-white hidden md:flex md:gap-x-4 md:items-center">
-				<a href="">Events</a>
-				<a href="">Players</a>
-				<a href="">Results</a>
-				<button class="bg-yellow-300 rounded-[10px] px-[24px] py-[4px] text-black"><a href="">Live
+		class="flex flex-col justify-between items-center bg-[url(./img/header__img.webp)] h-screen bg-center bg-cover bg-no-repeat py-5 2xl:px-24 2xl:py-20">
+		<nav class="flex flex-col w-full gap-y-5 justify-center items-center md:flex-row md:justify-between md:px-5">
+			<a href="./index.html">
+				<picture>
+					<source type="image/webp" srcSet="img/logo.webp" />
+					<img src="img/logo.png" alt="WPL logo" width="160" height="55" />
+				</picture>
+			</a>
+			<div class="flex items-center justify-between bg-none p-4 md:hidden">
+				<button id="burger-btn" class="text-white focus:outline-none">
+					<svg class="w-12 h-12" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd"
+							d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+							clip-rule="evenodd"></path>
+					</svg>
+				</button>
+			</div>
+			<div id="menu" class="menu bg-black text-white fixed inset-0 z-10 overflow-y-auto">
+				<button id="close-btn" class="close-btn">
+					<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+						</path>
+					</svg>
+				</button>
+				<div class="flex flex-col items-center justify-center h-full">
+					<a href="http://theworldputtingleague.com/format.html"
+						class="block py-4 text-white hover:text-yellow-400">Events</a>
+					<a href="http://theworldputtingleague.com/players.html"
+						class="block py-4 text-white hover:text-yellow-400">Players</a>
+					<a href="http://theworldputtingleague.com/past.html"
+						class="block py-4 text-white hover:text-yellow-400">Results</a>
+					<a href="https://player.vimeo.com/video/804104059"
+						class="block py-4 text-white hover:text-yellow-400">Watch a video</a>
+					<a href="https://watch.proleaguenetwork.com/"
+						class="block py-4 text-white hover:text-yellow-400">Live
+						Stream</a>
+				</div>
+			</div>
+
+			<div class="text-white hidden md:flex md:gap-x-4 md:items-center md:text-xl 2xl:text-2xl 2xl:gap-x-20">
+				<a class="hover:text-yellow-400" href="http://theworldputtingleague.com/format.html">Events</a>
+				<a class="hover:text-yellow-400" href="http://theworldputtingleague.com/players.html">Players</a>
+				<a class="hover:text-yellow-400" href="http://theworldputtingleague.com/past.html">Results</a>
+				<a class="hover:text-yellow-400" href="https://player.vimeo.com/video/804104059">Watch a video</a>
+				<button
+					class="bg-yellow-300 rounded-[10px] px-[24px] py-[4px] text-black hover:text-yellow-300 hover:bg-black border-2 border-yellow-300 hover:border-yellow-400"><a
+						href="https://watch.proleaguenetwork.com/">Live
 						Stream</a></button>
 			</div>
 		</nav>
-		<div class="flex flex-col gap-y-10 w-full justify-between items-center md:items-start md:flex-row">
+		<div class="flex flex-col gap-y-10 w-full justify-between items-center md:items-center md:flex-row">
 			<div class="flex flex-col items-center gap-y-10 md:items-start md:gap-y-5 md:ml-4">
-				<h1 class="font-bold text-4xl text-white text-center md:text-start">Next Event: <br> April 20th <br>
+				<h1
+					class="font-sans leading-snug font-bold text-4xl text-white text-center md:text-start md:text-5xl md:leading-normal 2xl:text-6xl">
+					Next
+					Event:
+					<br> April
+					20th <br>
 					Live from
 					Myrtle
-					Beach.</h1>
-				<h2 class="max-w-[250px] text-[#FFE600] text-lg text-center md:text-start md:max-w-[500px]">One day. 36
+					Beach.
+				</h1>
+				<h2
+					class="max-w-[250px] text-[#FFE600] text-lg text-center md:text-start md:max-w-[600px] md:text-2xl 2xl:text-3xl 2xl:max-w-[700px]">
+					One day. 36
 					Golfers. 4
 					Rounds.
 					Only One
@@ -44,79 +118,158 @@
 				</h2>
 			</div>
 			<div
-				class="flex justify-center gap-x-4 items-center w-full md:flex md:flex-col md:items-center md:gap-3 md:mr-12 md:w-auto ">
-				<img src="img/Instagram.svg" alt="Instagram Logo"><a href=""></a></img>
-				<img src="img/Facebook.svg" alt="Facebook Logo"><a href=""></a></img>
-				<img src="img/Twitter.svg" alt="Twitter Logo"><a href=""></a></img>
+				class="flex justify-center gap-x-4 items-center w-full md:flex md:flex-col md:items-center md:gap-3 md:mr-6 md:w-auto ">
+				<a href="https://www.instagram.com/worldputtingleague/"><svg class="fill-white hover:fill-yellow-400"
+						width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M34.902 10.2842C34.818 8.42074 34.5169 7.14572 34.0898 6.03183C33.6417 4.88291 33.0466 3.90212 32.0734 2.93535C31.1002 1.96857 30.127 1.35909 28.9788 0.917734C27.8656 0.483387 26.5913 0.189151 24.7289 0.105084C22.8596 0.0210168 22.2644 0 17.5175 0C12.7635 0 12.1684 0.0210168 10.3061 0.105084C8.44368 0.189151 7.16943 0.490392 6.0562 0.917734C4.90097 1.36609 3.92078 1.96157 2.95458 2.93535C1.98839 3.90913 1.37927 4.88291 0.938179 6.03183C0.511094 7.14572 0.210034 8.42074 0.126017 10.2842C0.0420003 12.1547 0.0209961 12.7502 0.0209961 17.5C0.0209961 22.2568 0.0420003 22.8523 0.126017 24.7158C0.210034 26.5793 0.511094 27.8543 0.938179 28.9682C1.38627 30.1171 1.98139 31.0979 2.95458 32.0647C3.92078 33.0384 4.90097 33.6409 6.0492 34.0823C7.16242 34.5166 8.43668 34.8109 10.2991 34.8949C12.1684 34.979 12.7635 35 17.5105 35C22.2644 35 22.8596 34.979 24.7219 34.8949C26.5843 34.8109 27.8586 34.5096 28.9718 34.0823C30.12 33.6339 31.1002 33.0384 32.0664 32.0647C33.0326 31.0909 33.6417 30.1171 34.0828 28.9682C34.5169 27.8543 34.811 26.5793 34.895 24.7158C34.979 22.8453 35 22.2498 35 17.5C35 12.7502 34.986 12.1477 34.902 10.2842ZM31.7583 24.5757C31.6813 26.285 31.3943 27.2168 31.1562 27.8263C30.8412 28.6389 30.4561 29.2274 29.84 29.8439C29.2238 30.4604 28.6427 30.8317 27.8236 31.1609C27.2074 31.3991 26.2762 31.6864 24.5749 31.7634C22.7335 31.8475 22.1804 31.8685 17.5035 31.8685C12.8266 31.8685 12.2734 31.8475 10.4321 31.7634C8.72374 31.6864 7.79255 31.3991 7.18343 31.1609C6.37127 30.8457 5.78315 30.4604 5.16703 29.8439C4.5509 29.2274 4.17983 28.6459 3.85076 27.8263C3.61271 27.2098 3.32566 26.278 3.24864 24.5757C3.16462 22.7332 3.14362 22.1797 3.14362 17.5C3.14362 12.8203 3.16462 12.2668 3.24864 10.4243C3.32566 8.71497 3.61271 7.78323 3.85076 7.17374C4.16582 6.36109 4.5509 5.77262 5.16703 5.15613C5.78315 4.53963 6.36426 4.16833 7.18343 3.83907C7.79955 3.60088 8.73074 3.31365 10.4321 3.23659C12.2734 3.15252 12.8266 3.13151 17.5035 3.13151C22.1804 3.13151 22.7335 3.15252 24.5749 3.23659C26.2832 3.31365 27.2144 3.60088 27.8236 3.83907C28.6357 4.15432 29.2238 4.53963 29.84 5.15613C30.4561 5.77262 30.8272 6.35408 31.1562 7.17374C31.3943 7.79023 31.6813 8.72198 31.7583 10.4243C31.8424 12.2668 31.8634 12.8203 31.8634 17.5C31.8634 22.1797 31.8354 22.7332 31.7583 24.5757Z" />
+						<path
+							d="M17.5036 8.50488C12.5326 8.50488 8.51379 12.5331 8.51379 17.5001C8.51379 22.4741 12.5396 26.4953 17.5036 26.4953C22.4676 26.4953 26.4934 22.46 26.4934 17.5001C26.4934 12.5261 22.4746 8.50488 17.5036 8.50488ZM17.5036 23.3357C14.2829 23.3357 11.6714 20.7227 11.6714 17.5001C11.6714 14.2775 14.2829 11.6644 17.5036 11.6644C20.7242 11.6644 23.3358 14.2775 23.3358 17.5001C23.3358 20.7227 20.7242 23.3357 17.5036 23.3357Z" />
+						<path
+							d="M26.8434 10.2562C28.0034 10.2562 28.9438 9.31526 28.9438 8.15454C28.9438 6.99381 28.0034 6.05286 26.8434 6.05286C25.6834 6.05286 24.743 6.99381 24.743 8.15454C24.743 9.31526 25.6834 10.2562 26.8434 10.2562Z" />
+						<path
+							d="M0 17.5C0 22.2568 0.0210042 22.8523 0.105021 24.7158C0.189038 26.5793 0.490098 27.8543 0.917183 28.9682C1.36527 30.1171 1.96039 31.0979 2.93359 32.0647C3.89978 33.0314 4.87998 33.6409 6.02821 34.0823C7.14143 34.5166 8.41568 34.8109 10.2781 34.8949C12.1474 34.979 12.7425 35 17.4895 35C22.2434 35 22.8386 34.979 24.7009 34.8949C26.5633 34.8109 27.8376 34.5096 28.9508 34.0823C30.099 33.6339 31.0792 33.0384 32.0454 32.0647C33.0116 31.0979 33.6207 30.1171 34.0618 28.9682C34.4959 27.8543 34.79 26.5793 34.874 24.7158C34.958 22.8453 34.979 22.2498 34.979 17.5C34.979 12.7432 34.958 12.1477 34.874 10.2842C34.79 8.42074 34.4889 7.14572 34.0618 6.03183C33.6137 4.88291 33.0186 3.90212 32.0454 2.93535C31.0862 1.96157 30.106 1.35909 28.9578 0.917734C27.8446 0.483387 26.5703 0.189151 24.7079 0.105084C22.8386 0.0210168 22.2434 0 17.4965 0C12.7425 0 12.1474 0.0210168 10.2851 0.105084C8.42268 0.189151 7.14843 0.490392 6.03521 0.917734C4.88698 1.36609 3.90678 1.96157 2.94059 2.93535C1.97439 3.90913 1.36527 4.88291 0.924185 6.03183C0.490098 7.14572 0.189038 8.42074 0.105021 10.2842C0.0210042 12.1477 0 12.7432 0 17.5ZM3.15763 17.5C3.15763 12.8273 3.17864 12.2668 3.26265 10.4243C3.33967 8.71497 3.62673 7.78323 3.86477 7.17374C4.17984 6.36109 4.56491 5.77262 5.18104 5.15613C5.79716 4.53963 6.37828 4.16833 7.19744 3.83907C7.81356 3.60088 8.74475 3.31365 10.4461 3.23659C12.2875 3.15252 12.8406 3.13151 17.5175 3.13151C22.1944 3.13151 22.7475 3.15252 24.5889 3.23659C26.2973 3.31365 27.2284 3.60088 27.8376 3.83907C28.6497 4.15432 29.2378 4.53963 29.854 5.15613C30.4701 5.77262 30.8412 6.35408 31.1702 7.17374C31.4083 7.79023 31.6953 8.72198 31.7724 10.4243C31.8564 12.2668 31.8774 12.8203 31.8774 17.5C31.8774 22.1797 31.8564 22.7332 31.7724 24.5757C31.6953 26.285 31.4083 27.2168 31.1702 27.8263C30.8552 28.6389 30.4701 29.2274 29.854 29.8439C29.2378 30.4604 28.6567 30.8317 27.8376 31.1609C27.2214 31.3991 26.2903 31.6864 24.5889 31.7634C22.7475 31.8475 22.1944 31.8685 17.5175 31.8685C12.8406 31.8685 12.2875 31.8475 10.4461 31.7634C8.73775 31.6864 7.80656 31.3991 7.19744 31.1609C6.38528 30.8457 5.79716 30.4604 5.18104 29.8439C4.56491 29.2274 4.19384 28.6459 3.86477 27.8263C3.62673 27.2098 3.33967 26.278 3.26265 24.5757C3.17163 22.7332 3.15763 22.1727 3.15763 17.5Z" />
+					</svg>
+				</a>
+				<div class=" bg-white w-0.5 h-8 md:h-0.5 md:w-8"></div>
+				<a href="https://www.facebook.com/profile.php?id=100088495053500"><svg
+						class="fill-white hover:fill-yellow-400" width="35" height="35" viewBox="0 0 35 35"
+						xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M25.1033 19.4369L26.0103 13.4648H20.3368V9.59102C20.3368 7.95677 21.1279 6.36286 23.669 6.36286H26.25V1.27852C26.25 1.27852 23.9087 0.875 21.6712 0.875C16.9966 0.875 13.9441 3.73595 13.9441 8.91311V13.4648H8.75V19.4369H13.9441V33.8748C14.9869 34.0403 16.0537 34.125 17.1404 34.125C18.2272 34.125 19.2939 34.0403 20.3368 33.8748V19.4369H25.1033Z" />
+					</svg></a>
+				<div class=" bg-white w-0.5 h-8 md:h-0.5 md:w-8"></div>
+				<a href="https://twitter.com/worldputtleague"><svg class="fill-white hover:fill-yellow-400" width="35"
+						height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M30.7081 10.4719C30.7216 10.7799 30.7216 11.0739 30.7216 11.3819C30.7351 20.72 23.8744 31.5 11.328 31.5C7.62758 31.5 3.99466 30.394 0.874939 28.322C1.41515 28.392 1.95536 28.42 2.49557 28.42C5.56127 28.42 8.54594 27.356 10.9634 25.382C8.04624 25.326 5.48024 23.352 4.58889 20.468C5.61529 20.678 6.6687 20.636 7.66809 20.342C4.49435 19.698 2.21196 16.8 2.19846 13.4259C2.19846 13.3979 2.19846 13.3699 2.19846 13.3419C3.14383 13.8879 4.21074 14.1959 5.29117 14.2239C2.3065 12.1519 1.37463 8.02193 3.18434 4.78791C6.6552 9.21193 11.7602 11.8859 17.2433 12.1799C16.6896 9.72993 17.4459 7.15392 19.2151 5.41792C21.9567 2.74391 26.2784 2.88391 28.8714 5.72592C30.3975 5.41792 31.8696 4.82991 33.2066 4.00391C32.6934 5.64192 31.6265 7.02792 30.2084 7.90992C31.5589 7.74192 32.8825 7.36392 34.1249 6.80392C33.2066 8.23193 32.0451 9.46393 30.7081 10.4719Z" />
+					</svg>
+				</a>
 			</div>
 		</div>
 	</header>
-	<main class="flex flex-col gap-y-16">
-		<section class="flex flex-col items-center">
-			<h2 class="font-bold text-3xl text-black text-center my-4">Recap Of World Putting League Event</h2>
-			<h3 class="text-center text-2xl mb-4">Hawaii Rumble in Myrtle Beach, South Carolina, February 27-28, 2023.
-			</h3>
-			<img src="img/about__logo.jpg" class="w-1/2 mb-4" alt="Logo of WPL" />
-			<!-- <picture class="w-1/2 mb-4"> -->
-			<!-- <source type="image/webp" class="m-0" srcSet="img/about__logo.jpg" /> -->
-			<!-- </picture> -->
-			<span class="text-center px-4 mb-4">US National Mini Golf Team member Gary Hester (+550 field) won the
-				inaugural
-				World
-				Putting League Championship at
-				Hawaiian Rumble Minigolf in Myrtle Beach, S.C. after shooting a final round 31 for 5 under par to defeat
-				Matt McCaslin
-				(33, 3 under par; +190 pre-tournament to win) and take home the $5,000 championship purse.
-				Hester finished the Day 1 qualifying rounds by shooting 32 (-4) and 31 (-5), respectively, to combine
-				for 9 under par
-				and the No. 2 seed heading into the Day 2 match play bracket. After Day 1, Hester’s odds to win moved to
-				+420.
-				Hester defeated Rick Alessi with a 35 (-1) in the quarterfinals before squeaking by Joey Graybeal in the
-				semifinals by
-				one stroke, 32 (-4) to 33 (-3). Graybeal entered the Day 2 quarterfinals as the top seed (-350 to win
-				after Day 1) after
-				pacing the field with a combined -9 in the two qualifying rounds.</span>
-			<picture>
-				<source type="image/webp" srcSet="img/about__img.webp" />
-				<img src="img/about__img.jpg" alt="Image of the WPL athlets" width="767" height="724" />
-			</picture>
+	<main class="flex flex-col gap-y-16 2xl:gap-y-24">
+		<section class="flex flex-col items-center 2xl:mt-24">
+			<div class="lg:flex lg:flex-row lg:gap-x-10 lg:justify-center lg:items-end 2xl:justify-between 2xl:px-24">
+				<div class="lg:flex lg:flex-col lg:w-1/2">
+					<div class="flex flex-col items-center md:flex md:flex-row md:gap-x-8 md:mt-9 ">
+						<div class="flex flex-col">
+							<h2
+								class="font-bold text-3xl text-black text-center my-4 md:text-left md:pl-4 md:text-3xl 2xl:text-4xl">
+								Recap Of
+								World
+								Putting
+								League Event</h2>
+							<h3 class="text-center text-2xl mb-4 md:text-left md:pl-4 2xl:text-3xl">Hawaii Rumble in
+								Myrtle
+								Beach,
+								South
+								Carolina, February 27-28,
+								2023.
+							</h3>
+						</div>
+						<picture class="hidden md:block md:mr-5">
+							<source type="image/webp" srcSet="img/about__logo.webp" />
+							<img src="img/about__logo.jpg" alt="Logo of WPL" />
+						</picture>
+						<picture class="mb-4 md:hidden">
+							<source type="image/webp" srcSet="img/about__logo.webp" />
+							<img src="img/about__logo.jpg" alt="Logo of WPL" />
+						</picture>
+					</div>
+					<div class="flex flex-col items-center lg:items-start">
+						<span class="text-center px-4 mb-4 md:text-left md:mt-4 md:text-xl 2xl:text-2xl">US National
+							Mini Golf Team
+							member Gary
+							Hester
+							(+550
+							field) won
+							the
+							inaugural
+							World
+							Putting League Championship at
+							Hawaiian Rumble Minigolf in Myrtle Beach, S.C. after shooting a final round 31 for 5 under
+							par
+							to
+							defeat
+							Matt McCaslin
+							(33, 3 under par; +190 pre-tournament to win) and take home the $5,000 championship purse.
+							<br>
+							Hester finished the Day 1 qualifying rounds by shooting 32 (-4) and 31 (-5), respectively,
+							to
+							combine
+							for 9 under par
+							and the No. 2 seed heading into the Day 2 match play bracket. After Day 1, Hester’s odds to
+							win
+							moved to
+							+420. <br>
+							Hester defeated Rick Alessi with a 35 (-1) in the quarterfinals before squeaking by Joey
+							Graybeal in
+							the
+							semifinals by
+							one stroke, 32 (-4) to 33 (-3). Graybeal entered the Day 2 quarterfinals as the top seed
+							(-350
+							to
+							win
+							after Day 1) after
+							pacing the field with a combined -9 in the two qualifying rounds.</span>
+						<picture class="md:w-1/2 lg:hidden">
+							<source type="image/webp" srcSet="img/about__img.webp" />
+							<img src="img/about__img.jpg" alt="Image of the WPL athlets" width="767" height="724" />
+						</picture>
+					</div>
+				</div>
+				<picture class="hidden lg:block lg:w-[450px] 2xl:w-[650px]">
+					<source type="image/webp" srcSet="img/about__img.webp" />
+					<img src="img/about__img.jpg" alt="Image of the WPL athlets" width="767" height="724" />
+				</picture>
+			</div>
 		</section>
 		<section class="flex flex-col items-center">
-			<h2 class="font-bold text-3xl mb-12">Featuring:</h2>
+			<h2 class="font-bold text-3xl mb-12 md:text-4xl 2xl:text-5xl">Featuring:</h2>
 			<div
-				class="flex flex-col items-start mx-10 md:flex-row md:flex-wrap md:justify-center md:gap-x-20 md:gap-y-4">
+				class="flex flex-col items-start mx-10 md:flex-row md:flex-wrap md:justify-center md:gap-x-20 md:gap-y-4 2xl:gap-x-72">
 				<div class="flex flex-col items-center gap-2 mb-4 max-w-[270px]">
 					<picture>
 						<source type="image/webp" srcSet="img/featuring__img1.webp" />
 						<img src="img/featuring__img1.jpg" alt="Kaz Brown" width="270" height="350" />
 					</picture>
-					<h3 class="font-bold text-2xl">Kaz Brown</h3>
-					<p class="text-center">On-Air Host From Pro League Network</p>
+					<h3 class="font-bold text-2xl md:text-3xl 2xl:text-4xl">Kaz Brown</h3>
+					<p class="text-center md:text-2xl 2xl:text-3xl">On-Air Host From Pro League Network</p>
 				</div>
 				<div class="flex flex-col items-center gap-2 mb-4 max-w-[270px] ">
 					<picture>
 						<source type="image/webp" srcSet="img/featuring__img2.webp" />
 						<img src="img/featuring__img2.jpg" alt="Brian Katrek" width="270" height="350" />
 					</picture>
-					<h3 class="font-bold text-2xl">Brian Katrek</h3>
-					<p class="text-center">Tournament Commentator And Host Of PGA TOUR Radio</p>
+					<h3 class="font-bold text-2xl md:text-3xl 2xl:text-4xl">Brian Katrek</h3>
+					<p class="text-center md:text-2xl 2xl:text-3xl">Tournament Commentator And Host Of PGA TOUR Radio
+					</p>
 				</div>
 				<div class="flex flex-col items-center gap-2 mb-4 max-w-[270px]">
 					<picture>
 						<source type="image/webp" srcSet="img/featuring__img3.webp" />
 						<img src="img/featuring__img3.jpg" alt="Rob Pizzola" width="270" height="350" />
 					</picture>
-					<h3 class="font-bold text-2xl">Rob Pizzola</h3>
-					<p class="text-center">Featured Guest</p>
+					<h3 class="font-bold text-2xl md:text-3xl 2xl:text-4xl">Rob Pizzola</h3>
+					<p class="text-center md:text-3xl 2xl:text-3xl">Featured Guest</p>
 				</div>
 			</div>
 		</section>
-		<section class="flex flex-col items-center">
-			<h2 class="font-bold text-3xl text-center mb-2">Winner Of The Last WPL Event</h2>
-			<h3 class="font-semibold mb-2">Gary Hester</h3>
-			<p class="mb-2">North Carolina</p>
-			<div class="flex flex-col-reverse items-center">
-				<span class="text-center px-4">Teeing off his Mini Golf career in 1969, Gary has over 50 years of
+		<section class="flex flex-col">
+			<h2 class="font-bold text-3xl text-center mb-2 md:text-4xl 2xl:text-5xl 2xl:mb-8">Winner Of The Last WPL
+				Event</h2>
+			<h3 class="font-semibold text-xl mb-2 text-center md:text-3xl 2xl:text-4xl 2xl:mb-8">Gary Hester</h3>
+			<p class="mb-2 text-center md:text-2xl 2xl:text-3xl 2xl:mb-8">North Carolina</p>
+			<div
+				class="flex flex-col-reverse items-center md:flex-row md:justify-center md:items-center md:gap-x-4 lg:items-center 2xl:justify-between 2xl:px-24">
+				<span class="text-center px-4 md:text-left md:w-1/2 md:p-0 md:text-xl 2xl:text-3xl ">Teeing off his
+					Mini
+					Golf
+					career
+					in 1969, Gary has
+					over 50
+					years of
 					experience in the sport. He started at the Arnold
 					Palmer Mini Golf course in High Point, NC, where he took home four straight championships. In the
 					USPMGA Masters, he has
@@ -125,25 +278,38 @@
 					also represented the US National Mini Golf Team at the World Mini Golf Championships for the last
 					few years. In Sweden
 					he finished as the top American and finished third overall.</span>
-				<picture class="mb-6">
+				<picture class="max-w-[270px] mb-6 2xl:max-w-[372px]">
 					<source type="image/webp" srcSet="img/winner__img.jpg" />
-					<img src="img/winner__img.jpg" alt="Gary Hester" />
+					<img src="img/winner__img.jpg" alt="Gary Hester" width="372" height="352" />
 				</picture>
 			</div>
 		</section>
 		<footer class="flex flex-col items-center bg-black gap-y-4">
-			<picture class="w-1/2 mt-4">
+			<picture class="mt-4">
 				<source type="image/webp" srcSet="img/logo.webp" />
-				<img src="img/logo.png" alt="WPL logo" />
+				<img src="img/logo.png" alt="WPL logo" width="160" height="55" />
 			</picture>
-			<p class="text-white text-center px-6">World Putting League is sanctioned by the USPMGA (US Pro MiniGolf
+			<p class="text-white text-center px-6 md:text-xl">World Putting League is sanctioned by the USPMGA (US Pro
+				MiniGolf
 				Association) and
 				produced by Pro League
 				Network</p>
-			<p class="text-white text-center mb-4">2023</p>
+			<p class="text-white text-center mb-4 md:text-xl">2023</p>
 		</footer>
 	</main>
 </body>
+<script>
+	const burgerBtn = document.getElementById('burger-btn');
+	const menu = document.getElementById('menu');
+	const closeBtn = document.getElementById('close-btn');
 
+	burgerBtn.addEventListener('click', () => {
+		menu.classList.toggle('open');
+	});
+
+	closeBtn.addEventListener('click', () => {
+		menu.classList.remove('open');
+	});
+</script>
 
 </html>
