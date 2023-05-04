@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- <link rel="stylesheet" href="style.css" /> -->
+	<!-- 
+			Во время разработки вы можете использоваться cdn для более быстрого отклика после изменения стилей
+
+		-->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>Document</title>
+</head>
+
+<body>
+	<header
+		class="flex flex-col justify-between items-center bg-[url(./img/header__img.webp)] h-screen bg-center bg-cover bg-no-repeat py-5">
+		<nav class="flex flex-col w-full justify-center items-center md:flex-row md:justify-between md:px-5">
+			<picture class="header__nav-logo ">
+				<source type="image/webp" srcSet="img/logo.webp" />
+				<img src="img/logo.png" alt="WPL logo" width="160" height="55" />
+			</picture>
+			<div class="text-white hidden md:flex md:gap-x-4 md:items-center">
+				<a href="">Events</a>
+				<a href="">Players</a>
+				<a href="">Results</a>
+				<button class="bg-yellow-300 rounded-[10px] px-[24px] py-[4px] text-black"><a href="">Live
+						Stream</a></button>
+			</div>
+		</nav>
+		<div class="flex flex-col gap-y-10 w-full justify-between items-center md:items-start md:flex-row">
+			<div class="flex flex-col items-center gap-y-10 md:items-start md:gap-y-5 md:ml-4">
+				<h1 class="font-bold text-4xl text-white text-center md:text-start">Next Event: <br> April 20th <br>
+					Live from
+					Myrtle
+					Beach.</h1>
+				<h2 class="max-w-[250px] text-[#FFE600] text-lg text-center md:text-start md:max-w-[500px]">One day. 36
+					Golfers. 4
+					Rounds.
+					Only One
+					Champion!
+				</h2>
+			</div>
+			<div
+				class="flex justify-center gap-x-4 items-center w-full md:flex md:flex-col md:items-center md:gap-3 md:mr-12 md:w-auto ">
+				<img src="img/Instagram.svg" alt="Instagram Logo"><a href=""></a></img>
+				<img src="img/Facebook.svg" alt="Facebook Logo"><a href=""></a></img>
+				<img src="img/Twitter.svg" alt="Twitter Logo"><a href=""></a></img>
+			</div>
+		</div>
+	</header>
+	<main class="flex flex-col gap-y-16">
+		<section class="flex flex-col items-center">
+			<h2 class="font-bold text-3xl text-black text-center my-4">Recap Of World Putting League Event</h2>
+			<h3 class="text-center text-2xl mb-4">Hawaii Rumble in Myrtle Beach, South Carolina, February 27-28, 2023.
+			</h3>
+			<img src="img/about__logo.jpg" class="w-1/2 mb-4" alt="Logo of WPL" />
+			<!-- <picture class="w-1/2 mb-4"> -->
+			<!-- <source type="image/webp" class="m-0" srcSet="img/about__logo.jpg" /> -->
+			<!-- </picture> -->
+			<span class="text-center px-4 mb-4">US National Mini Golf Team member Gary Hester (+550 field) won the
+				inaugural
+				World
+				Putting League Championship at
+				Hawaiian Rumble Minigolf in Myrtle Beach, S.C. after shooting a final round 31 for 5 under par to defeat
+				Matt McCaslin
+				(33, 3 under par; +190 pre-tournament to win) and take home the $5,000 championship purse.
+				Hester finished the Day 1 qualifying rounds by shooting 32 (-4) and 31 (-5), respectively, to combine
+				for 9 under par
+				and the No. 2 seed heading into the Day 2 match play bracket. After Day 1, Hester’s odds to win moved to
+				+420.
+				Hester defeated Rick Alessi with a 35 (-1) in the quarterfinals before squeaking by Joey Graybeal in the
+				semifinals by
+				one stroke, 32 (-4) to 33 (-3). Graybeal entered the Day 2 quarterfinals as the top seed (-350 to win
+				after Day 1) after
+				pacing the field with a combined -9 in the two qualifying rounds.</span>
+			<picture>
+				<source type="image/webp" srcSet="img/about__img.webp" />
+				<img src="img/about__img.jpg" alt="Image of the WPL athlets" width="767" height="724" />
+			</picture>
+		</section>
+		<section class="flex flex-col items-center">
+			<h2 class="font-bold text-3xl mb-12">Featuring:</h2>
+			<div
+				class="flex flex-col items-start mx-10 md:flex-row md:flex-wrap md:justify-center md:gap-x-20 md:gap-y-4">
+				<div class="flex flex-col items-center gap-2 mb-4 max-w-[270px]">
+					<picture>
+						<source type="image/webp" srcSet="img/featuring__img1.webp" />
+						<img src="img/featuring__img1.jpg" alt="Kaz Brown" width="270" height="350" />
+					</picture>
+					<h3 class="font-bold text-2xl">Kaz Brown</h3>
+					<p class="text-center">On-Air Host From Pro League Network</p>
+				</div>
+				<div class="flex flex-col items-center gap-2 mb-4 max-w-[270px] ">
+					<picture>
+						<source type="image/webp" srcSet="img/featuring__img2.webp" />
+						<img src="img/featuring__img2.jpg" alt="Brian Katrek" width="270" height="350" />
+					</picture>
+					<h3 class="font-bold text-2xl">Brian Katrek</h3>
+					<p class="text-center">Tournament Commentator And Host Of PGA TOUR Radio</p>
+				</div>
+				<div class="flex flex-col items-center gap-2 mb-4 max-w-[270px]">
+					<picture>
+						<source type="image/webp" srcSet="img/featuring__img3.webp" />
+						<img src="img/featuring__img3.jpg" alt="Rob Pizzola" width="270" height="350" />
+					</picture>
+					<h3 class="font-bold text-2xl">Rob Pizzola</h3>
+					<p class="text-center">Featured Guest</p>
+				</div>
+			</div>
+		</section>
+		<section class="flex flex-col items-center">
+			<h2 class="font-bold text-3xl text-center mb-2">Winner Of The Last WPL Event</h2>
+			<h3 class="font-semibold mb-2">Gary Hester</h3>
+			<p class="mb-2">North Carolina</p>
+			<div class="flex flex-col-reverse items-center">
+				<span class="text-center px-4">Teeing off his Mini Golf career in 1969, Gary has over 50 years of
+					experience in the sport. He started at the Arnold
+					Palmer Mini Golf course in High Point, NC, where he took home four straight championships. In the
+					USPMGA Masters, he has
+					won multiple senior divisions and has registered 11 top ten and two second place finishes in the
+					main draw. Gary has
+					also represented the US National Mini Golf Team at the World Mini Golf Championships for the last
+					few years. In Sweden
+					he finished as the top American and finished third overall.</span>
+				<picture class="mb-6">
+					<source type="image/webp" srcSet="img/winner__img.jpg" />
+					<img src="img/winner__img.jpg" alt="Gary Hester" />
+				</picture>
+			</div>
+		</section>
+		<footer class="flex flex-col items-center bg-black gap-y-4">
+			<picture class="w-1/2 mt-4">
+				<source type="image/webp" srcSet="img/logo.webp" />
+				<img src="img/logo.png" alt="WPL logo" />
+			</picture>
+			<p class="text-white text-center px-6">World Putting League is sanctioned by the USPMGA (US Pro MiniGolf
+				Association) and
+				produced by Pro League
+				Network</p>
+			<p class="text-white text-center mb-4">2023</p>
+		</footer>
+	</main>
+</body>
+
+
+</html>
