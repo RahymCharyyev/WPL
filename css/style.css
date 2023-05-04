@@ -798,6 +798,10 @@ video {
     align-items: flex-start;
   }
 
+  .md\:items-end {
+    align-items: flex-end;
+  }
+
   .md\:items-center {
     align-items: center;
   }
@@ -973,8 +977,8 @@ video {
          column-gap: 5rem;
   }
 
-  .\32xl\:gap-y-24 {
-    row-gap: 6rem;
+  .\32xl\:gap-y-64 {
+    row-gap: 16rem;
   }
 
   .\32xl\:gap-x-72 {
@@ -990,6 +994,11 @@ video {
   .\32xl\:py-20 {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  .\32xl\:px-\[100px\] {
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   .\32xl\:text-2xl {
