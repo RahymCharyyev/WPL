@@ -10,7 +10,9 @@ module.exports = {
         "header-bg": "url('./src/img/header__img.webp')",
       },
       fontFamily: {
-        sans: ["Open Sans", "sans-serif"],
+        regular: ["fonts/OpenSans-Regular.ttf"],
+        semiBold: ["fonts/OpenSans-SemiBold.ttf"],
+        bold: ["fonts/OpenSans-Bold.ttf"],
       },
     },
   },

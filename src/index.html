@@ -5,15 +5,25 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- <link rel="stylesheet" href="style.css" /> -->
-	<!-- 
-			Во время разработки вы можете использоваться cdn для более быстрого отклика после изменения стилей
+	<meta name="description" content="Welcome to the official website of the World Putting League">
+	<!-- Favicons -->
+	<link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+	<link rel="mask-icon" href="../icons/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#000000">
+	<!-- Styles -->
+	<link rel="stylesheet" href="style.css" />
+	<link rel="preload" href="../css/animate.min.css">
 
-		-->
-	<script src="https://cdn.tailwindcss.com"></script>
 	<title>WPL - World Putting League</title>
 </head>
 <style>
+	body {
+		font-family: 'regular', sans-serif;
+	}
+
 	.menu {
 		display: none;
 	}
@@ -46,7 +56,8 @@
 <body>
 	<header
 		class="flex flex-col justify-between items-center bg-[url(./img/header__img.webp)] h-screen bg-center bg-cover bg-no-repeat py-5 2xl:px-24 2xl:py-20">
-		<nav class="flex flex-col w-full gap-y-5 justify-center items-center md:flex-row md:justify-between md:px-5">
+		<nav
+			class="flex flex-col w-full gap-y-5 justify-center items-center md:flex-row md:justify-between md:px-5 wow animate__animated animate__fadeInDown">
 			<a href="./index.html">
 				<picture>
 					<source type="image/webp" srcSet="img/logo.webp" />
@@ -54,7 +65,7 @@
 				</picture>
 			</a>
 			<div class="flex items-center justify-between bg-none p-4 md:hidden">
-				<button id="burger-btn" class="text-white focus:outline-none">
+				<button aria-label="button of the burger menu" id="burger-btn" class="text-white focus:outline-none">
 					<svg class="w-12 h-12" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
 						xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd"
@@ -99,7 +110,7 @@
 		<div class="flex flex-col gap-y-10 w-full justify-between items-center md:items-center md:flex-row">
 			<div class="flex flex-col items-center gap-y-10 md:items-start md:gap-y-5 md:ml-4">
 				<h1
-					class="font-sans leading-snug font-bold text-4xl text-white text-center md:text-start md:text-5xl md:leading-normal 2xl:text-6xl">
+					class="font-sans leading-snug font-bold text-4xl text-white text-center md:text-start md:text-5xl md:leading-normal 2xl:text-6xl wow animate__animated animate__fadeInLeft">
 					Next
 					Event:
 					<br> April
@@ -109,7 +120,7 @@
 					Beach.
 				</h1>
 				<h2
-					class="max-w-[250px] text-[#FFE600] text-lg text-center md:text-start md:max-w-[600px] md:text-2xl 2xl:text-3xl 2xl:max-w-[700px]">
+					class="max-w-[250px] text-[#FFE600] text-lg text-center md:text-start md:max-w-[600px] md:text-2xl 2xl:text-3xl 2xl:max-w-[750px] wow animate__animated animate__fadeInLeft">
 					One day. 36
 					Golfers. 4
 					Rounds.
@@ -118,9 +129,10 @@
 				</h2>
 			</div>
 			<div
-				class="flex justify-center gap-x-4 items-center w-full md:flex md:flex-col md:items-center md:gap-3 md:mr-6 md:w-auto ">
-				<a href="https://www.instagram.com/worldputtingleague/"><svg class="fill-white hover:fill-yellow-400"
-						width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+				class="flex justify-center gap-x-4 items-center w-full md:flex md:flex-col md:items-center md:gap-3 md:mr-6 md:w-auto wow animate__animated animate__fadeInRight">
+				<a aria-label="Instagram Link" href="https://www.instagram.com/worldputtingleague/"><svg
+						class="fill-white hover:fill-yellow-400" width="35" height="35" viewBox="0 0 35 35" fill="none"
+						xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M34.902 10.2842C34.818 8.42074 34.5169 7.14572 34.0898 6.03183C33.6417 4.88291 33.0466 3.90212 32.0734 2.93535C31.1002 1.96857 30.127 1.35909 28.9788 0.917734C27.8656 0.483387 26.5913 0.189151 24.7289 0.105084C22.8596 0.0210168 22.2644 0 17.5175 0C12.7635 0 12.1684 0.0210168 10.3061 0.105084C8.44368 0.189151 7.16943 0.490392 6.0562 0.917734C4.90097 1.36609 3.92078 1.96157 2.95458 2.93535C1.98839 3.90913 1.37927 4.88291 0.938179 6.03183C0.511094 7.14572 0.210034 8.42074 0.126017 10.2842C0.0420003 12.1547 0.0209961 12.7502 0.0209961 17.5C0.0209961 22.2568 0.0420003 22.8523 0.126017 24.7158C0.210034 26.5793 0.511094 27.8543 0.938179 28.9682C1.38627 30.1171 1.98139 31.0979 2.95458 32.0647C3.92078 33.0384 4.90097 33.6409 6.0492 34.0823C7.16242 34.5166 8.43668 34.8109 10.2991 34.8949C12.1684 34.979 12.7635 35 17.5105 35C22.2644 35 22.8596 34.979 24.7219 34.8949C26.5843 34.8109 27.8586 34.5096 28.9718 34.0823C30.12 33.6339 31.1002 33.0384 32.0664 32.0647C33.0326 31.0909 33.6417 30.1171 34.0828 28.9682C34.5169 27.8543 34.811 26.5793 34.895 24.7158C34.979 22.8453 35 22.2498 35 17.5C35 12.7502 34.986 12.1477 34.902 10.2842ZM31.7583 24.5757C31.6813 26.285 31.3943 27.2168 31.1562 27.8263C30.8412 28.6389 30.4561 29.2274 29.84 29.8439C29.2238 30.4604 28.6427 30.8317 27.8236 31.1609C27.2074 31.3991 26.2762 31.6864 24.5749 31.7634C22.7335 31.8475 22.1804 31.8685 17.5035 31.8685C12.8266 31.8685 12.2734 31.8475 10.4321 31.7634C8.72374 31.6864 7.79255 31.3991 7.18343 31.1609C6.37127 30.8457 5.78315 30.4604 5.16703 29.8439C4.5509 29.2274 4.17983 28.6459 3.85076 27.8263C3.61271 27.2098 3.32566 26.278 3.24864 24.5757C3.16462 22.7332 3.14362 22.1797 3.14362 17.5C3.14362 12.8203 3.16462 12.2668 3.24864 10.4243C3.32566 8.71497 3.61271 7.78323 3.85076 7.17374C4.16582 6.36109 4.5509 5.77262 5.16703 5.15613C5.78315 4.53963 6.36426 4.16833 7.18343 3.83907C7.79955 3.60088 8.73074 3.31365 10.4321 3.23659C12.2734 3.15252 12.8266 3.13151 17.5035 3.13151C22.1804 3.13151 22.7335 3.15252 24.5749 3.23659C26.2832 3.31365 27.2144 3.60088 27.8236 3.83907C28.6357 4.15432 29.2238 4.53963 29.84 5.15613C30.4561 5.77262 30.8272 6.35408 31.1562 7.17374C31.3943 7.79023 31.6813 8.72198 31.7583 10.4243C31.8424 12.2668 31.8634 12.8203 31.8634 17.5C31.8634 22.1797 31.8354 22.7332 31.7583 24.5757Z" />
 						<path
@@ -132,15 +144,16 @@
 					</svg>
 				</a>
 				<div class=" bg-white w-0.5 h-8 md:h-0.5 md:w-8"></div>
-				<a href="https://www.facebook.com/profile.php?id=100088495053500"><svg
+				<a aria-label="Facebook Link" href="https://www.facebook.com/profile.php?id=100088495053500"><svg
 						class="fill-white hover:fill-yellow-400" width="35" height="35" viewBox="0 0 35 35"
 						xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M25.1033 19.4369L26.0103 13.4648H20.3368V9.59102C20.3368 7.95677 21.1279 6.36286 23.669 6.36286H26.25V1.27852C26.25 1.27852 23.9087 0.875 21.6712 0.875C16.9966 0.875 13.9441 3.73595 13.9441 8.91311V13.4648H8.75V19.4369H13.9441V33.8748C14.9869 34.0403 16.0537 34.125 17.1404 34.125C18.2272 34.125 19.2939 34.0403 20.3368 33.8748V19.4369H25.1033Z" />
 					</svg></a>
 				<div class=" bg-white w-0.5 h-8 md:h-0.5 md:w-8"></div>
-				<a href="https://twitter.com/worldputtleague"><svg class="fill-white hover:fill-yellow-400" width="35"
-						height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
+				<a aria-label="Twitter Link" href="https://twitter.com/worldputtleague"><svg
+						class="fill-white hover:fill-yellow-400" width="35" height="35" viewBox="0 0 35 35"
+						xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M30.7081 10.4719C30.7216 10.7799 30.7216 11.0739 30.7216 11.3819C30.7351 20.72 23.8744 31.5 11.328 31.5C7.62758 31.5 3.99466 30.394 0.874939 28.322C1.41515 28.392 1.95536 28.42 2.49557 28.42C5.56127 28.42 8.54594 27.356 10.9634 25.382C8.04624 25.326 5.48024 23.352 4.58889 20.468C5.61529 20.678 6.6687 20.636 7.66809 20.342C4.49435 19.698 2.21196 16.8 2.19846 13.4259C2.19846 13.3979 2.19846 13.3699 2.19846 13.3419C3.14383 13.8879 4.21074 14.1959 5.29117 14.2239C2.3065 12.1519 1.37463 8.02193 3.18434 4.78791C6.6552 9.21193 11.7602 11.8859 17.2433 12.1799C16.6896 9.72993 17.4459 7.15392 19.2151 5.41792C21.9567 2.74391 26.2784 2.88391 28.8714 5.72592C30.3975 5.41792 31.8696 4.82991 33.2066 4.00391C32.6934 5.64192 31.6265 7.02792 30.2084 7.90992C31.5589 7.74192 32.8825 7.36392 34.1249 6.80392C33.2066 8.23193 32.0451 9.46393 30.7081 10.4719Z" />
 					</svg>
@@ -155,12 +168,15 @@
 					<div class="flex flex-col items-center md:flex md:flex-row md:gap-x-8 md:mt-9 ">
 						<div class="flex flex-col">
 							<h2
-								class="font-bold text-3xl text-black text-center my-4 md:text-left md:pl-4 md:text-3xl 2xl:text-4xl">
+								class="font-bold text-3xl text-black text-center my-4 md:text-left md:pl-4 md:text-3xl 2xl:text-4xl wow animate__animated animate__fadeInLeft">
 								Recap Of
 								World
 								Putting
 								League Event</h2>
-							<h3 class="text-center text-2xl mb-4 md:text-left md:pl-4 2xl:text-3xl">Hawaii Rumble in
+							<h3
+								class="text-center text-2xl mb-4 md:text-left md:pl-4 2xl:text-3xl 2xl:max-w-[700px] wow animate__animated animate__fadeInLeft">
+								Hawaii
+								Rumble in
 								Myrtle
 								Beach,
 								South
@@ -168,16 +184,16 @@
 								2023.
 							</h3>
 						</div>
-						<picture class="hidden md:block md:mr-5">
+						<picture class="hidden md:block md:mr-5 wow animate__animated animate__fadeInDown">
 							<source type="image/webp" srcSet="img/about__logo.webp" />
-							<img src="img/about__logo.jpg" alt="Logo of WPL" />
+							<img src="img/about__logo.jpg" alt="Logo of WPL" width="189" height="224" />
 						</picture>
-						<picture class="mb-4 md:hidden">
+						<picture class="mb-4 md:hidden wow animate__animated animate__fadeInRight">
 							<source type="image/webp" srcSet="img/about__logo.webp" />
-							<img src="img/about__logo.jpg" alt="Logo of WPL" />
+							<img src="img/about__logo.jpg" alt="Logo of WPL" width="189" height="224" />
 						</picture>
 					</div>
-					<div class="flex flex-col items-center lg:items-start">
+					<div class="flex flex-col items-center lg:items-start wow animate__animated animate__fadeInLeft">
 						<span class="text-center px-4 mb-4 md:text-left md:mt-4 md:text-xl 2xl:text-2xl">US National
 							Mini Golf Team
 							member Gary
@@ -213,23 +229,25 @@
 							win
 							after Day 1) after
 							pacing the field with a combined -9 in the two qualifying rounds.</span>
-						<picture class="md:w-1/2 lg:hidden">
+						<picture class="md:w-1/2 lg:hidden wow animate__animated animate__fadeInUp">
 							<source type="image/webp" srcSet="img/about__img.webp" />
 							<img src="img/about__img.jpg" alt="Image of the WPL athlets" width="767" height="724" />
 						</picture>
 					</div>
 				</div>
-				<picture class="hidden lg:block lg:w-[450px] 2xl:w-[650px]">
+				<picture class="hidden lg:block lg:w-[450px] 2xl:w-[650px] wow animate__animated animate__fadeInRight">
 					<source type="image/webp" srcSet="img/about__img.webp" />
 					<img src="img/about__img.jpg" alt="Image of the WPL athlets" width="767" height="724" />
 				</picture>
 			</div>
 		</section>
 		<section class="flex flex-col items-center">
-			<h2 class="font-bold text-3xl mb-12 md:text-4xl 2xl:text-5xl">Featuring:</h2>
+			<h2 class="font-bold text-3xl mb-12 md:text-4xl 2xl:text-5xl wow animate__animated animate__fadeInDown">
+				Featuring:</h2>
 			<div
 				class="flex flex-col items-start mx-10 md:flex-row md:flex-wrap md:justify-center md:gap-x-20 md:gap-y-4 2xl:gap-x-72">
-				<div class="flex flex-col items-center gap-2 mb-4 max-w-[270px]">
+				<div
+					class="flex flex-col items-center gap-2 mb-4 max-w-[270px] wow animate__animated animate__fadeInLeft">
 					<picture>
 						<source type="image/webp" srcSet="img/featuring__img1.webp" />
 						<img src="img/featuring__img1.jpg" alt="Kaz Brown" width="270" height="350" />
@@ -237,7 +255,8 @@
 					<h3 class="font-bold text-2xl md:text-3xl 2xl:text-4xl">Kaz Brown</h3>
 					<p class="text-center md:text-2xl 2xl:text-3xl">On-Air Host From Pro League Network</p>
 				</div>
-				<div class="flex flex-col items-center gap-2 mb-4 max-w-[270px] ">
+				<div
+					class="flex flex-col items-center gap-2 mb-4 max-w-[270px] wow animate__animated animate__fadeInUp">
 					<picture>
 						<source type="image/webp" srcSet="img/featuring__img2.webp" />
 						<img src="img/featuring__img2.jpg" alt="Brian Katrek" width="270" height="350" />
@@ -246,7 +265,8 @@
 					<p class="text-center md:text-2xl 2xl:text-3xl">Tournament Commentator And Host Of PGA TOUR Radio
 					</p>
 				</div>
-				<div class="flex flex-col items-center gap-2 mb-4 max-w-[270px]">
+				<div
+					class="flex flex-col items-center gap-2 mb-4 max-w-[270px] wow animate__animated animate__fadeInRight">
 					<picture>
 						<source type="image/webp" srcSet="img/featuring__img3.webp" />
 						<img src="img/featuring__img3.jpg" alt="Rob Pizzola" width="270" height="350" />
@@ -257,13 +277,17 @@
 			</div>
 		</section>
 		<section class="flex flex-col">
-			<h2 class="font-bold text-3xl text-center mb-2 md:text-4xl 2xl:text-5xl 2xl:mb-8">Winner Of The Last WPL
+			<h2
+				class="font-bold text-3xl text-center mb-2 md:text-4xl 2xl:text-5xl 2xl:mb-8 wow animate__animated animate__fadeInUp">
+				Winner Of The Last WPL
 				Event</h2>
 			<h3 class="font-semibold text-xl mb-2 text-center md:text-3xl 2xl:text-4xl 2xl:mb-8">Gary Hester</h3>
 			<p class="mb-2 text-center md:text-2xl 2xl:text-3xl 2xl:mb-8">North Carolina</p>
 			<div
 				class="flex flex-col-reverse items-center md:flex-row md:justify-center md:items-center md:gap-x-4 lg:items-center 2xl:justify-between 2xl:px-24">
-				<span class="text-center px-4 md:text-left md:w-1/2 md:p-0 md:text-xl 2xl:text-3xl ">Teeing off his
+				<span
+					class="text-center px-4 md:text-left md:w-1/2 md:p-0 md:text-xl 2xl:text-3xl wow animate__animated animate__fadeInLeft">Teeing
+					off his
 					Mini
 					Golf
 					career
@@ -278,14 +302,14 @@
 					also represented the US National Mini Golf Team at the World Mini Golf Championships for the last
 					few years. In Sweden
 					he finished as the top American and finished third overall.</span>
-				<picture class="max-w-[270px] mb-6 2xl:max-w-[372px]">
+				<picture class="max-w-[270px] mb-6 2xl:max-w-[372px] wow animate__animated animate__fadeInRight">
 					<source type="image/webp" srcSet="img/winner__img.jpg" />
 					<img src="img/winner__img.jpg" alt="Gary Hester" width="372" height="352" />
 				</picture>
 			</div>
 		</section>
 		<footer class="flex flex-col items-center bg-black gap-y-4">
-			<picture class="mt-4">
+			<picture class="mt-4 wow animate__animated animate__fadeInDown">
 				<source type="image/webp" srcSet="img/logo.webp" />
 				<img src="img/logo.png" alt="WPL logo" width="160" height="55" />
 			</picture>
@@ -298,18 +322,9 @@
 		</footer>
 	</main>
 </body>
-<script>
-	const burgerBtn = document.getElementById('burger-btn');
-	const menu = document.getElementById('menu');
-	const closeBtn = document.getElementById('close-btn');
-
-	burgerBtn.addEventListener('click', () => {
-		menu.classList.toggle('open');
-	});
-
-	closeBtn.addEventListener('click', () => {
-		menu.classList.remove('open');
-	});
-</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="../js/script.js"></script>
+<script src="../js/wow.min.js"></script>
+<script src="../js/wowInit.js"></script>
 
 </html>
